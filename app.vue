@@ -1,8 +1,12 @@
 <template>
-  <UContainer class="h-dvh flex flex-col justify-center">
+  <UContainer class="relative h-dvh flex flex-col justify-center">
+    <div class="fixed bottom-0 right-0">
+      <UButton icon="mdi:github" size="sm" color="gray" variant="solid" title="View on GitHub" class="m-2"
+        :ui="{ rounded: 'rounded-full' }" to="https://github.com/code-leen/doughflow" :trailing="false" />
+    </div>
     <UCard class="text-center">
       <UContainer class="p-3">
-        <h1 class="text-3xl font-bold text-wrap">When do you want sourdough? 🍞</h1>
+        <h1 class="text-3xl font-bold text-wrap pb-4">When do you want sourdough? 🍞</h1>
         <UFormGroup label="Time">
           <UInput v-model="desiredTime" type="time" />
         </UFormGroup>
