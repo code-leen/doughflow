@@ -2,7 +2,7 @@
   <UContainer class="h-dvh flex flex-col justify-center">
     <UCard class="text-center">
       <UContainer class="p-3">
-        <h1 class="text-3xl text-wrap">When do you want sourdough? 🍞</h1>
+        <h1 class="text-3xl font-bold text-wrap">When do you want sourdough? 🍞</h1>
         <UFormGroup label="Time">
           <UInput v-model="desiredTime" type="time" />
         </UFormGroup>
@@ -10,7 +10,7 @@
           <div v-if="startTime" class="text-sm">
             <div class="text-xl">
               Start at
-              <div class="mt-5 text-2xl">
+              <div class="mt-5 text-2xl font-semibold">
                 {{ startTime }}
               </div>
             </div>
