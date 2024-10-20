@@ -2,18 +2,21 @@
   <UContainer class="h-dvh flex flex-col justify-center">
     <UCard class="text-center">
       <UContainer class="p-3">
-        <h1 class="text-2xl text-wrap">When do you want sourdough? 🍞</h1>
+        <h1 class="text-3xl text-wrap">When do you want sourdough? 🍞</h1>
         <UFormGroup label="Time">
           <UInput v-model="desiredTime" type="time" />
         </UFormGroup>
         <UCard class="min-h-32">
-          <p class="text-xl">
-            {{ startTime }}
-          </p>
           <div v-if="startTime" class="text-sm">
+            <div class="text-xl">
+              Start at
+              <div class="mt-5 text-2xl">
+                {{ startTime }}
+              </div>
+            </div>
             <p class="opacity-50 mt-5">Does not factor in cooling time</p>
             <ol class="li-decimal">
-              <li>Rise Time: {{ RISE_TIME }} hrs</li>
+              <li>Starter Rise Time: {{ RISE_TIME }} hrs</li>
               <li>Stretch n' Folds: {{ FOLDS_TIME }} hrs</li>
               <li>Bulk Fermentation: {{ BULK_FERMENTATION_TIME }} hrs</li>
               <li>Proofing: {{ SIT_OUT_TIME }} hr + {{ PROOFING_TIME }} hrs in fridge </li>
