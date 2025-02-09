@@ -1,5 +1,5 @@
 <template>
-    <UContainer class="relative h-dvh flex flex-col justify-center">
+    <UContainer class="relative py-8">
         <UCard class="text-center">
             <UContainer class="p-3">
                 <h1 class="text-3xl font-bold text-wrap pb-4">When do you want sourdough? 🍞</h1>
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <p class="opacity-50 mt-5">Add {{ COOLING_TIME }} hour for cooling time</p>
-                        <ol class="li-decimal text-center pl-8 mt-4 space-y-2">
+                        <ol class="li-decimal text-center mt-4 space-y-2">
                             <li>
                                 <span class="font-medium">Starter Rise Time:</span> {{ RISE_TIME }} hrs
                                 <div class="text-sm opacity-75">{{ formatTime(starterRiseTime) }}</div>
