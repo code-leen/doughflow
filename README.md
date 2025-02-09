@@ -8,5 +8,7 @@ Built with Nuxt 3 and Tailwind.
 
 ## TODOs
 
-- [ ] Show times for each step after giving the time to start
-- [ ] Save time selected to `localStorage`
+- [x] Show times for each step after giving the time to start
+- [ ] Save time selected to `localStorage` (or give way to download or copy it)
+- [ ] Add minus/plus buttons for step hour ranges
+- [ ] Add stages to "start now"— allows user to start now by default, but also enter in current step to determine when sourdough will be ready
