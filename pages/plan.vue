@@ -12,9 +12,6 @@
                             <USelect v-model="desiredTime" :options="availableTimeOptions" :disabled="!desiredDate"
                                 placeholder="Select time" class="w-full" />
                         </div>
-                        <p v-if="desiredDate && isToday" class="text-xs text-gray-500 mt-1">
-                            Ready after {{ formatTimeOnly(minEndTime) }}
-                        </p>
                     </UFormGroup>
                 </div>
                 <UCard class="min-h-32 mt-4">
@@ -125,7 +122,6 @@ const desiredTime = ref('');
 const desiredDate = ref('');
 const startTimeDate = ref(null);
 const endTimeDate = ref(null);
-const minEndTime = ref(null);
 
 const starterRiseTime = ref('');
 const stretchAndFoldsTime = ref('');
