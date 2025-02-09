@@ -84,26 +84,27 @@ watch([bulkFermentationTime, proofingTime], calculateTimes, { immediate: true })
 
 function calculateTimes() {
     const currentTime = new Date();
-    let currentDate = new Date(currentTime);
 
-    starterRiseTime.value = new Date(currentDate);
-    currentDate.setHours(currentDate.getHours() + RISE_TIME);
+    starterRiseTime.value = new Date(currentTime.getTime());
 
-    stretchAndFoldsTime.value = new Date(currentDate);
-    currentDate.setHours(currentDate.getHours() + FOLDS_TIME);
+    const afterRise = new Date(currentTime.getTime() + (RISE_TIME * 60 * 60 * 1000));
+    stretchAndFoldsTime.value = afterRise;
 
-    bulkFermentationStartTime.value = new Date(currentDate);
-    currentDate.setHours(currentDate.getHours() + bulkFermentationTime.value);
+    const afterFolds = new Date(afterRise.getTime() + (FOLDS_TIME * 60 * 60 * 1000));
+    bulkFermentationStartTime.value = afterFolds;
 
-    sitOutTime.value = new Date(currentDate);
-    currentDate.setHours(currentDate.getHours() + SIT_OUT_TIME);
+    const afterBulk = new Date(afterFolds.getTime() + (bulkFermentationTime.value * 60 * 60 * 1000));
+    sitOutTime.value = afterBulk;
 
-    proofingStartTime.value = new Date(currentDate);
-    currentDate.setHours(currentDate.getHours() + proofingTime.value);
+    const afterSitOut = new Date(afterBulk.getTime() + (SIT_OUT_TIME * 60 * 60 * 1000));
+    proofingStartTime.value = afterSitOut;
 
-    bakingStartTime.value = new Date(currentDate);
-    currentDate.setMinutes(currentDate.getMinutes() + BAKING_MINUTES);
-    endTime.value = new Date(currentDate);
+
+    const afterProofing = new Date(afterSitOut.getTime() + (proofingTime.value * 60 * 60 * 1000));
+    bakingStartTime.value = afterProofing;
+
+
+    endTime.value = new Date(afterProofing.getTime() + (BAKING_MINUTES * 60 * 1000));
 }
 
 function formatTime(date) {
