@@ -1,8 +1,8 @@
 # doughflow 🍞
 
-A project to help me go with the flow when baking sourdough.
-
-This is a tool that calculates the time to start baking sourdough based on when I want it out of the oven!
+A collection of tools to help me go with the flow when baking sourdough:
+- ⏰ **Start Now**— calculates time sourdough will be ready from the current time and stages with adjustable time ranges
+- 🗓️ **Plan Ahead**— calculates time to start baking sourdough based on when you want it fresh out the oven!
 
 Built with Nuxt 3 and Tailwind.
 
